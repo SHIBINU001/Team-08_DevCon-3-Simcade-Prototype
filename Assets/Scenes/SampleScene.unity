@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4df8f45db46f60e46adbf308dfee97a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.007
+      value: -0.038
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4df8f45db46f60e46adbf308dfee97a2,
         type: 3}
@@ -786,6 +786,34 @@ MonoBehaviour:
     FLWheel: {fileID: 1884261890}
     RRWheel: {fileID: 803762160}
     RLWheel: {fileID: 1120424537}
+  gasInput: 0
+  brakeInput: 0
+  steeringInput: 0
+  motorPower: 150
+  steeringCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.8490677
+      value: 60.556335
+      inSlope: -0.34173465
+      outSlope: -0.34173465
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.103673376
+    - serializedVersion: 3
+      time: 86.0418
+      value: 15.362334
+      inSlope: 0.12028418
+      outSlope: 0.12028418
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4726497
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1645203240
 GameObject:
   m_ObjectHideFlags: 0
