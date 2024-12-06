@@ -789,8 +789,9 @@ MonoBehaviour:
   gasInput: 0
   brakeInput: 0
   steeringInput: 0
-  motorPower: 250
+  motorPower: 300.9
   brakePower: 500000
+  slipAngle: 0
   steeringCurve:
     serializedVersion: 2
     m_Curve:

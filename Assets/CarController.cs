@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour
     public float steeringInput;
     public float motorPower;
     public float brakePower;
-    private float slipAngle;
+    public float slipAngle;
     private float speed;
     public AnimationCurve steeringCurve;
     // Start is called before the first frame update
@@ -36,8 +36,9 @@ public class CarController : MonoBehaviour
     {
         gasInput = Input.GetAxis("Vertical");
         steeringInput = Input.GetAxis("Horizontal");
-        slipAngle = Vector3.Angle(transform.forward, playerRB.velocity - Vector3.up);
-        if (slipAngle < 120f) {
+        slipAngle = Vector3.Angle(transform.forward, playerRB.velocity-transform.forward);
+        if (slipAngle < 120f)
+        {
             if (gasInput < 0)
             {
                 brakeInput = Mathf.Abs(gasInput);
@@ -47,6 +48,10 @@ public class CarController : MonoBehaviour
             {
                 brakeInput = 0;
             }
+        }
+        else
+        {
+            brakeInput = 0;
         }
     }
     void ApplyBrake()
