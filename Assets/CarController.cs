@@ -17,6 +17,21 @@ public class CarController : MonoBehaviour
     {
         
     }
+    void ApplyWheelPositions()
+    {
+        UpdateWheel(colliders.FRWheel, wheelMeshes.FRWheel);
+        UpdateWheel(colliders.FLWheel, wheelMeshes.FLWheel);
+        UpdateWheel(colliders.RRWheel, wheelMeshes.RRWheel);
+        UpdateWheel(colliders.RLWheel, wheelMeshes.RLWheel);
+    }
+    void UpdateWheel(WheelCollider coll, MeshRenderer wheelMesh)
+    {
+        Quaternion quat;
+        Vector3 position;
+        coll.GetWorldPose(out position, out quat);
+        wheelMesh.transform.position = position;
+        wheelMesh.transform.rotation = quat;
+    }
 }
 [System.Serializable]
 public class WheelColliders
