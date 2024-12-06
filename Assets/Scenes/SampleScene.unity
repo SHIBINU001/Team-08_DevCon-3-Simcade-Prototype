@@ -470,6 +470,12 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!23 &803762160 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 107872841706212376, guid: 4df8f45db46f60e46adbf308dfee97a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405877946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +596,18 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!23 &1120424537 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2684658987838536492, guid: 4df8f45db46f60e46adbf308dfee97a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405877946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1237844553 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -978174136897741793, guid: 4df8f45db46f60e46adbf308dfee97a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405877946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1405877946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -681,6 +699,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1405877949}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4df8f45db46f60e46adbf308dfee97a2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1405877951}
   m_SourcePrefab: {fileID: 100100000, guid: 4df8f45db46f60e46adbf308dfee97a2, type: 3}
 --- !u!1 &1405877947 stripped
 GameObject:
@@ -742,6 +764,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1405877951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405877947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ca0d7f6c48644408d539ec5ecebfd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+    FRWheel: {fileID: 1011505034}
+    FLWheel: {fileID: 1793274849}
+    RRWheel: {fileID: 1645203242}
+    RLWheel: {fileID: 1833527965}
+  wheelMeshes:
+    FRWheel: {fileID: 1237844553}
+    FLWheel: {fileID: 1884261890}
+    RRWheel: {fileID: 803762160}
+    RLWheel: {fileID: 1120424537}
 --- !u!1 &1645203240
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +999,12 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!23 &1884261890 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 315445660895963744, guid: 4df8f45db46f60e46adbf308dfee97a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1405877946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
