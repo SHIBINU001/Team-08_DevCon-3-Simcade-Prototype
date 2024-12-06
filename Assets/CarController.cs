@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -11,6 +12,8 @@ public class CarController : MonoBehaviour
     public float brakeInput;
     public float steeringInput;
     public float motorPower;
+    public float brakePower;
+    private float slipAngle;
     private float speed;
     public AnimationCurve steeringCurve;
     // Start is called before the first frame update
@@ -27,12 +30,36 @@ public class CarController : MonoBehaviour
         ApplyMotor();
         ApplyWheelPositions();
         ApplySteering();
+        ApplyBrake();
     }
     void CheckInput()
     {
         gasInput = Input.GetAxis("Vertical");
         steeringInput = Input.GetAxis("Horizontal");
+        slipAngle = Vector3.Angle(transform.forward, playerRB.velocity - Vector3.up);
+        if (slipAngle < 120f) {
+            if (gasInput < 0)
+            {
+                brakeInput = Mathf.Abs(gasInput);
+                gasInput = 0;
+            }
+            else
+            {
+                brakeInput = 0;
+            }
+        }
     }
+    void ApplyBrake()
+    {
+        colliders.FRWheel.brakeTorque = brakeInput * brakePower * 0.7f;
+        colliders.FLWheel.brakeTorque = brakeInput * brakePower * 0.7f;
+        colliders.RRWheel.brakeTorque = brakeInput * brakePower * 0.3f;
+        colliders.RLWheel.brakeTorque = brakeInput * brakePower * 0.3f;
+
+
+    }
+
+
     void ApplyMotor()
     {
 
